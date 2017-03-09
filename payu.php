@@ -154,7 +154,7 @@ class payu extends PaymentModule
 			Configuration::updateValue('PAYU_CURRENCY',   Tools::getValue('currency'));
 			Configuration::updateValue('PAYU_LANGUAGE',   Tools::getValue('language'));
 		}
-		$this->_html .= '<div class="conf confirm"><img src="../img/admin/ok.gif" alt="'.$this->l('ok').'" /> '.$this->l('Settings updated').'</div>';
+		$this->_html .= '<div class="conf confirm"><img src="../img/admin/enabled.gif" alt="'.$this->l('ok').'" /> '.$this->l('Settings updated').'</div>';
 	}
 
 	# Display
