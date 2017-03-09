@@ -97,7 +97,7 @@ class PayuValidationModuleFrontController extends ModuleFrontController
 
 			$forSend['ORDER_PNAME'][] = $item['name'];
 			$forSend['ORDER_PCODE'][] = $item['id_product'];
-			$forSend['ORDER_PINFO'][] = $item['description_short'];
+			$forSend['ORDER_PINFO'][] = strip_tags($item['description_short']);
 			$forSend['ORDER_PRICE'][] = $price;
 			$forSend['ORDER_QTY'][]   = $item['quantity'];
 			$forSend['ORDER_VAT'][]   = ($item['rate'] != '') ? $item['rate'] : 0;
@@ -118,9 +118,11 @@ class PayuValidationModuleFrontController extends ModuleFrontController
 			'BILL_CITY'     => $user['city'],
 			'BILL_PHONE'    => $user['phone_mobile'],
 			'BILL_EMAIL'    => $customer->email,
-			
-			'DISCOUNT'      => $discount,
 		);
+
+		if ($discount) {
+			$forSend['DISCOUNT'] = $discount;
+		}
 
 		$mailVars = array();
 		if (!$payu->currentOrder) {
@@ -140,7 +142,6 @@ class PayuValidationModuleFrontController extends ModuleFrontController
 
 		$pay = PayuCLS::getInst()->setOptions( $option )->setData( $forSend )->LU();
 		echo $pay;
-		
 		die;
 
 		// $cart = $this->context->cart;
