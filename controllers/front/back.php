@@ -59,7 +59,9 @@ class PayuBackModuleFrontController extends ModuleFrontController
 		);
 
 		$this->context->smarty->assign(array(
-      		'message' => $message,
+      		'info'		=> 'Информация о статусе оплаты',
+			'customer'	=> 'Уважаемый покупатель!',
+      		'message' 	=> $message,
 		));
 
 		$this->setTemplate('module:payu/views/templates/front/back.tpl');
