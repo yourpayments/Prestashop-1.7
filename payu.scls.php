@@ -8,7 +8,7 @@ if ( $_GET['payudebugmode'] == 'true' )
 class PayuCLS
 {
 	// var $luUrl = "https://secure.payu.ua/order/lu.php", 
-	var $luUrl = "https://secure.payu.ru/order/lu.php",
+	var $luUrl = "https://secure.ypmn.ru/order/lu.php",
 		$button = "<input type='submit'>",
 		$debug = 0,
 		$showinputs = "hidden";
