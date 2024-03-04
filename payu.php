@@ -52,7 +52,7 @@ class payu extends PaymentModule
 	private function _displayForm()
 	{
 		$ipn_url    = 'http://'. $_SERVER['HTTP_HOST'] .'/module/payu/ipn';
-		$system_url = $this->Payu_getVar('system_url') ?: 'https://secure.payu.ru/order/lu.php';
+		$system_url = $this->Payu_getVar('system_url') ?: 'https://secure.ypmn.ru/order/lu.php';
 		$back_ref   = $this->Payu_getVar('back_ref')   ?: 'http://'. $_SERVER['HTTP_HOST'] .'/module/payu/back';
 
 		$this->_html .=
